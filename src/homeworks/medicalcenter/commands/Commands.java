@@ -12,13 +12,13 @@ public interface Commands {
 
     static void printCommands(){
         System.out.println("input: " + EXIT + ") for exit");
-        System.out.println("       " + ADD_DOCTOR + ") for add doctor");
-        System.out.println("       " + SEARCH_DOCTOR_BY_PROFESSION + ") for search doctor by profession");
-        System.out.println("       " + DELETE_DOCTOR_BY_ID + ") for delete doctor by id");
-        System.out.println("       " + CHANGE_DOCTOR_DATA_BY_ID + ") for change doctor data by id");
-        System.out.println("       " + ADD_PATIENT + ") for add patient");
-        System.out.println("       " + PRINT_ALL_PATIENTS_BY_DOCTOR + ") for print patients by doctor");
-        System.out.println("       " + PRINT_TODAYS_PATIENTS + ") for print all today's patients");
+        System.out.println("input: " + ADD_DOCTOR + ") for add doctor");
+        System.out.println("input " + SEARCH_DOCTOR_BY_PROFESSION + ") for search doctor by profession");
+        System.out.println("input " + DELETE_DOCTOR_BY_ID + ") for delete doctor by id");
+        System.out.println("input " + CHANGE_DOCTOR_DATA_BY_ID + ") for change doctor data by id");
+        System.out.println("input " + ADD_PATIENT + ") for add patient");
+        System.out.println("input " + PRINT_ALL_PATIENTS_BY_DOCTOR + ") for print patients by doctor");
+        System.out.println("input " + PRINT_TODAYS_PATIENTS + ") for print all today's patients");
     }
 
 }

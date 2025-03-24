@@ -12,12 +12,12 @@ public interface ChangeDataCommands {
 
     static void printCommands(){
         System.out.println("input: " + EXIT2 + ") for exit");
-        System.out.println("       " + CHANGE_NAME + ") for change name");
-        System.out.println("       " + CHANGE_SURNAME + ") for change surname");
-        System.out.println("       " + CHANGE_EMAIL + ") for change email");
-        System.out.println("       " + CHANGE_PHONE_NUMBER + ") for change phone number");
-        System.out.println("       " + CHANGE_PROFESSION + ") for change profession");
-        System.out.println("       " + CHANGE_ALL + ") for change all");
+        System.out.println("input " + CHANGE_NAME + ") for change name");
+        System.out.println("input " + CHANGE_SURNAME + ") for change surname");
+        System.out.println("input " + CHANGE_EMAIL + ") for change email");
+        System.out.println("input " + CHANGE_PHONE_NUMBER + ") for change phone number");
+        System.out.println("input " + CHANGE_PROFESSION + ") for change profession");
+        System.out.println("input " + CHANGE_ALL + ") for change all");
     }
 
 }
