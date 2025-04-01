@@ -2,8 +2,11 @@ package classworks.classwork11;
 
 public class MainThreadExample {
     public static void main(String[] args) throws InterruptedException {
-        Thread thread = new Thread(new MyNewThread());
-        thread.start();
+    // Thread thread = new Thread(new MyNewThread());
+    // thread.start();
+
+        MyNewThread myNewThread = new MyNewThread();
+        myNewThread.start();
 
         for (int i = 0; i < 5; i++) {
             System.out.println("Main Thread" + i);

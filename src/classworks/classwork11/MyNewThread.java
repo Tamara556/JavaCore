@@ -1,6 +1,6 @@
 package classworks.classwork11;
 
-public class MyNewThread implements Runnable {
+public class MyNewThread extends Thread {
 
 
     @Override
