@@ -14,6 +14,7 @@ public class OnlineStore {
     private static User currentUser;
 
     public static void main(String[] args) {
+        dataStorage.deserializeData();
         boolean isRun = true;
         while (isRun) {
             printCommands();
@@ -85,7 +86,7 @@ public class OnlineStore {
         String orderId = scanner.nextLine();
         Order order = dataStorage.getOrderById(orderId);
         if(order != null && order.getUser().equals(currentUser)){
-            order.setOrderStatus(OrderStatus.CANCELED);
+            dataStorage.changeOrderStatus(order, OrderStatus.CANCELED);
             System.out.println("Order status is CANCELED");
         } else {
             System.out.println("Invalid order");
@@ -164,10 +165,11 @@ public class OnlineStore {
                     return;
                 }
                 product.setStockQty(product.getStockQty() - orderById.getQty());
-                orderById.setOrderStatus(OrderStatus.DELIVERED);
+                dataStorage.changeProductStockQty(product, product.getStockQty() - orderById.getQty());
+                dataStorage.changeOrderStatus(orderById, OrderStatus.DELIVERED);
                 System.out.println("Order status has been updated!");
             } else {
-                orderById.setOrderStatus(orderStatus);
+                dataStorage.changeOrderStatus(orderById, orderStatus);
                 System.out.println("Order status has been updated!");
 
             }

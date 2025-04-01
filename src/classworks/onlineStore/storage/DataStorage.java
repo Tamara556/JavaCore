@@ -1,9 +1,7 @@
 package classworks.onlineStore.storage;
 
-import classworks.onlineStore.model.Order;
-import classworks.onlineStore.model.Product;
-import classworks.onlineStore.model.User;
-import classworks.onlineStore.model.UserType;
+import classworks.onlineStore.model.*;
+import classworks.onlineStore.util.SerializeUtil;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -18,6 +16,7 @@ public class DataStorage {
 
     public void addUser(User user) {
         userMap.put(user.getEmail(), user);
+        SerializeUtil.serializeUserData(userMap);
     }
 
     public User getUserByEmail(String email) {
@@ -26,10 +25,12 @@ public class DataStorage {
 
     public void addProduct(Product product) {
         products.add(product);
+        SerializeUtil.serializeProductData(products);
     }
 
     public void addOrder(Order order) {
         orders.add(order);
+        SerializeUtil.serializeOrderData(orders);
     }
 
     public Product getProductById(String id) {
@@ -80,4 +81,19 @@ public class DataStorage {
         }
     }
 
+    public void changeOrderStatus(Order order, OrderStatus orderStatus) {
+        order.setOrderStatus(OrderStatus.CANCELED);
+        SerializeUtil.serializeOrderData(orders);
+    }
+
+    public void deserializeData() {
+        userMap = SerializeUtil.deSerializeUserData();
+        products = SerializeUtil.deSerializeProductData();
+        orders = SerializeUtil.deSerializeOrderData();
+    }
+
+    public void changeProductStockQty(Product product, int qty) {
+        product.setStockQty(qty);
+        SerializeUtil.serializeProductData(products);
+    }
 }
